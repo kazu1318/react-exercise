@@ -16,7 +16,6 @@ function App() {
     "Australia/Sydney",
   ];
 
-  // 現在位置を取得する関数
   function getLocation() {
     if (!navigator.geolocation) {
       setError("Geolocation is not supported by your browser");
@@ -36,7 +35,6 @@ function App() {
     );
   }
 
-  // 天気を取得する関数
   async function fetchWeather() {
     if (!latitude || !longitude || !timezone) {
       setError("緯度、経度、またはタイムゾーンが選択されていません。");
@@ -57,6 +55,12 @@ function App() {
 
   return (
     <Box sx={{ padding: "20px", fontFamily: "Arial", maxWidth: "600px", margin: "0 auto" }}>
+      <Box sx={{ marginBottom: "20px" }}>
+        <Typography variant="h6">日本大学文理学部情報科学科 Webプログラミングの演習課題</Typography>
+        <Typography variant="subtitle1">氏名: 伊藤数真</Typography>
+        <Typography variant="subtitle1">学生証番号: 5423085</Typography>
+      </Box>
+
       <Typography variant="h4" gutterBottom>
         天気予報アプリ
       </Typography>
