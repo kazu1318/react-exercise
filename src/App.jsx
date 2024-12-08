@@ -4,7 +4,7 @@ import { Button, Typography, Box, FormControl, Select, MenuItem, InputLabel } fr
 function App() {
   const [latitude, setLatitude] = useState(null);
   const [longitude, setLongitude] = useState(null);
-  const [timezone, setTimezone] = useState("");
+  const [timezone, setTimezone] = useState(""); 
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState("");
 
@@ -18,7 +18,7 @@ function App() {
 
   function getLocation() {
     if (!navigator.geolocation) {
-      setError("Geolocation is not supported by your browser");
+      setError("お使いのブラウザでは位置情報がサポートされていません");
       return;
     }
 
@@ -30,7 +30,7 @@ function App() {
         setError("");
       },
       () => {
-        setError("Failed to fetch location. Please allow location access.");
+        setError("位置情報の取得に失敗しました。位置情報へのアクセスを許可してください。");
       }
     );
   }
@@ -49,7 +49,7 @@ function App() {
       setWeather(data.daily);
       setError("");
     } catch {
-      setError("Failed to fetch weather data.");
+      setError("気象データの取得に失敗しました。");
     }
   }
 
